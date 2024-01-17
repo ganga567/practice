@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert on Submit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+      
+    <form id="myForm">
+        <h1>LOGIN FORM</h1>
+        <label for="name">ENTER USERNAME:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">ENTER EMAIL:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="LOGIN">
+    </form>
+
+    <script>
+        function checkDay(day) {
+            var message;
+
+            switch (day) {
+                case 'Monday':
+                    message = 'It\'s the beginning of the week.';
+                    break;
+                case 'Tuesday':
+                case 'Wednesday':
+                case 'Thursday':
+                    message = 'It\'s a weekday.';
+                    break;
+                case 'Friday':
+                    message = 'It\'s almost the weekend!';
+                    break;
+                case 'Saturday':
+                case 'Sunday':
+                    message = 'It\'s the weekend!';
+                    break;
+                default:
+                    message = 'Invalid day entered.';
+            }
+
+            alert(message);
+        }
+
+        // Example usage
+        var inputDay = prompt('Enter a day of the week:');
+        checkDay(inputDay);
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Get form data
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Display alert with form data
+            alert("login sucessfully");
+        });
+        function checkDay(day) {
+            var message;
+
+            switch (day) {
+                case 'Monday':
+                    message = 'It\'s the beginning of the week.';
+                    break;
+                case 'Tuesday':
+                case 'Wednesday':
+                case 'Thursday':
+                    message = 'It\'s a weekday.';
+                    break;
+                case 'Friday':
+                    message = 'It\'s almost the weekend!';
+                    break;
+                case 'Saturday':
+                case 'Sunday':
+                    message = 'It\'s the weekend!';
+                    break;
+                default:
+                    message = 'Invalid day entered.';
+            }
+
+            alert(message);
+        }
+
+        // Example usage
+        var inputDay = prompt('Enter a day of the week:');
+        checkDay(inputDay);
+    </script>
+
+</body>
+</html>
